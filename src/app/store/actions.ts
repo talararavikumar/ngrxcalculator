@@ -1,6 +1,7 @@
 import { createAction, props } from "@ngrx/store";
 
 export const addUserInputKEY = createAction("ADD USER INPUT KEY", props<{sInputKey:string}>());
+export const updateResultValue = createAction("UPDATE RESULT VALUE", props<{sResultValue:string}>());
 export const removeInputKEY = createAction("REMOVE USER INPUT KEY");
 
 // export  function addUserInputKEY (data)

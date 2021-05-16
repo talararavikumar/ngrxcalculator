@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../store/reducer';
+import { AppState } from '../store/state';
 
 @Component({
   selector: 'app-alphabet-input-control',
@@ -14,7 +14,7 @@ export class AlphabetInputControlComponent implements OnInit {
   constructor(private store: Store<AppState>) {
     this.store.subscribe(state => console.log(state));
 
-    this.sAlphabetInputObs$ = this.store.select(state => state.sInputValue);
+    this.sAlphabetInputObs$ = this.store.select(state => state.input.sResultValue);
     this.sAlphabetInputObs$.subscribe(sValue => {
       console.log(sValue);
     });

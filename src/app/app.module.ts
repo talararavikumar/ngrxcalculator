@@ -8,9 +8,11 @@ import { KeypadControlComponent } from './keypad-control/keypad-control.componen
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { AppReducer } from './store/reducer';
+import { AppReducer } from './store/state';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { inputEffects } from './store/effects';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     CommonModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({AppReducer:AppReducer}),
+    StoreModule.forRoot(AppReducer),
+    EffectsModule.forRoot([inputEffects]),
+
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
