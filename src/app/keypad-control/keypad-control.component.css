@@ -1,0 +1,12 @@
+:host{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-top: 10px;
+}
+
+.kp-ctrl-key{
+    background-color: lightgray;
+    text-align: center;
+    cursor: pointer;
+}
