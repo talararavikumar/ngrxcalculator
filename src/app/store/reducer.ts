@@ -16,13 +16,17 @@ const initialState:AppState = {
 const reducer = createReducer(initialState,
     on(addUserInputKEY, (state, {sInputKey} )=>{
         const sResultInput = state.sInputValue+sInputKey;
-        console.log('addUserInputKEY' + sResultInput);
+        //console.log('addUserInputKEY' + sResultInput);
         return {...state, sInputValue:sResultInput, deleteValue:state.deleteValue+1}
     }),
     on(removeInputKEY,(state)=>{
-        return {...state, sInputValue:state.sInputValue.slice(state.sInputValue.length-1)}
+        return {...state, sInputValue:state.sInputValue.substr(0,state.sInputValue.length-1)}
     })
 );
 export function AppReducer(state : AppState | undefined, action: Action):any {
     return reducer(state, action)
 }
+
+// export function AppReducer(state : AppState | undefined, action: Actio) {
+    
+// }

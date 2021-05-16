@@ -10,14 +10,14 @@ import { AppState } from '../store/reducer';
 })
 export class AlphabetInputControlComponent implements OnInit {
 
-  public sAlphabetInputObs$:Observable<string>
-  constructor(private store:Store<AppState>) {
-    this.store.subscribe(store=>console.log(store));
+  public sAlphabetInputObs$: Observable<string>;
+  constructor(private store: Store<AppState>) {
+    this.store.subscribe(state => console.log(state));
 
-    this.sAlphabetInputObs$ = this.store.select(store=>store.sInputValue);
-    this.sAlphabetInputObs$.subscribe(sValue=>{
+    this.sAlphabetInputObs$ = this.store.select(state => state.sInputValue);
+    this.sAlphabetInputObs$.subscribe(sValue => {
       console.log(sValue);
-    })
+    });
    }
 
 

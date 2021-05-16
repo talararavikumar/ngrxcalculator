@@ -17,7 +17,7 @@ export class KeypadControlComponent implements OnInit {
   }
 
   fnKeyClickhandler(keyValue:string):void{
-     this.store.dispatch(addUserInputKEY({sInputKey:keyValue}));
+     this.store.dispatch(removeInputKEY());
   }
 
 }
